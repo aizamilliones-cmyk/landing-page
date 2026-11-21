@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Golden Crisp | Artisanal Fries & Snacks</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Reusable container to keep content centered on wide screens */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* 1. Header & Hero */
+    .hero-wrapper {
+      background-color: #1F2937;
+      color: #F9FAF8;
+      padding-bottom: 100px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 20px;
+      padding-bottom: 80px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: #F9FAF8;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 18px;
+      color: #E5E7EB;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #3882F6;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .hero-text h1 {
+      font-size: 48px;
+      font-weight: 900;
+      color: #F9FAF8;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    .hero-text p {
+      font-size: 18px;
+      color: #E5E7EB;
+      line-height: 1.4;
+      margin-bottom: 20px;
+    }
+
+    .btn-primary {
+      background-color: #3882F6;
+      color: #F9FAF8;
+      font-size: 18px;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 32px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #2563EB;
+    }
+
+    .hero-image {
+      flex: 1;
+      height: 250px;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* 2. Information Section */
+    .info-section {
+      padding: 60px 24px 90px;
+      text-align: center;
+    }
+
+    .info-section h2 {
+      font-size: 36px;
+      font-weight: 900;
+      color: #1F2937;
+      margin-bottom: 48px;
+    }
+
+    .cards-container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .card {
+      max-width: 170px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card-box {
+      width: 170px;
+      height: 170px;
+      border: 4px solid #3882F6;
+      border-radius: 16px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+
+    .card-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card p {
+      font-size: 16px;
+      color: #4B5563;
+      line-height: 1.4;
+    }
+
+    /* 3. Quote Section */
+    .quote-section {
+      background-color: #E5E7EB;
+      padding: 100px 24px;
+    }
+
+    .quote-container {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .quote-text {
+      font-size: 36px;
+      font-weight: 300;
+      font-style: italic;
+      color: #1F2937;
+      line-height: 1.3;
+    }
+
+    .quote-author {
+      align-self: flex-end;
+      font-size: 24px;
+      font-weight: 700;
+      color: #1F2937;
+      margin-top: 16px;
+    }
+
+    /* 4. Call to Action Section */
+    .cta-section {
+      padding: 80px 24px;
+      width: 100%;
+    }
+
+    .cta-banner {
+      background-color: #3882F6;
+      color: #F9FAF8;
+      border-radius: 8px;
+      padding: 48px 96px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cta-text h3 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .cta-text p {
+      font-size: 18px;
+      color: #E5E7EB;
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: #F9FAF8;
+      font-size: 18px;
+      font-weight: 700;
+      border: 2px solid #F9FAF8;
+      border-radius: 8px;
+      padding: 8px 32px;
+      cursor: pointer;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .btn-outline:hover {
+      background-color: #F9FAF8;
+      color: #3882F6;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #1F2937;
+      color: #E5E7EB;
+      text-align: center;
+      padding: 36px;
+      margin-top: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Section 1: Header & Hero -->
+  <div class="hero-wrapper">
+    <header class="header container">
+      <div class="logo">Golden Crisp</div>
+      <ul class="nav-links">
+        <li><a href="#menu">Our Menu</a></li>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#order">Order Now</a></li>
+      </ul>
+    </header>
+
+    <div class="hero container">
+      <div class="hero-text">
+        <h1>Crispy perfection in every bite</h1>
+        <p>Hand-cut, double-fried to golden perfection, and seasoned with our signature house blends. Freshly made to order every single day.</p>
+        <button class="btn-primary">Order Now</button>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=800&q=80" alt="Freshly cooked golden crispy fries">
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 2: Information -->
+  <section id="menu" class="info-section container">
+    <h2>Signature Flavors & Sides</h2>
+    <div class="cards-container">
+      <div class="card">
+        <div class="card-box">
+          <img src="https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?auto=format&fit=crop&w=400&q=80" alt="Classic Sea Salt Fries">
+        </div>
+        <p>Classic Sea Salt — Crispy outside, fluffy inside, lightly tossed in flaky sea salt.</p>
+      </div>
+      <div class="card">
+        <div class="card-box">
+          <img src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=400&q=80" alt="Loaded Cheese & Herbs">
+        </div>
+        <p>Loaded Cheese & Herbs — Topped with warm aged cheddar and fresh garden chives.</p>
+      </div>
+      <div class="card">
+        <div class="card-box">
+          <img src="https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=400&q=80" alt="Spicy Garlic Parmesan">
+        </div>
+        <p>Spicy Garlic Parm — Tossed in roasted garlic butter, chili flakes, and parmesan.</p>
+      </div>
+      <div class="card">
+        <div class="card-box">
+          <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=400&q=80" alt="Combo Meal Deal">
+        </div>
+        <p>The Ultimate Combo — Pair any large order of fries with our signature house burger.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Quote -->
+  <section id="story" class="quote-section">
+    <div class="quote-container">
+      <p class="quote-text">
+        "Hands down the crispiest, most flavorful fries I have ever tasted. Even after a twenty-minute ride home, they stayed crunchy and piping hot!"
+      </p>
+      <p class="quote-author">- Jamie Rivera, Food Critic</p>
+    </div>
+  </section>
+
+  <!-- Section 4: Call to Action -->
+  <section id="order" class="cta-section container">
+    <div class="cta-banner">
+      <div class="cta-text">
+        <h3>Craving something crispy?</h3>
+        <p>Sign up for our rewards club and get a free large order of fries on your first visit!</p>
+      </div>
+      <button class="btn-outline">Sign up</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    Copyright &copy; Golden Crisp 2026 &bull; Built for The Odin Project
+  </footer>
+
+</body>
+</html>
